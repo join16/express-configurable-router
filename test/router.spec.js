@@ -16,12 +16,12 @@ describe('router', function() {
       key: 'example1'
     }), new Plugin({
       key: 'example2',
-      paramHandler: function ex2ParamHandler(config, req, res, value) {
+      paramHandler: function ex2ParamHandler(config, options, req, res, value) {
         if (config.parse) {
           return parseInt(value);
         }
       },
-      handler: function ex2Handler(config, req, res, next) {
+      handler: function ex2Handler(config, options, req, res, next) {
         next();
       }
     })];

@@ -57,7 +57,7 @@ describe('Plugin', function() {
     it('returns express style middleware function', function() {
       var plugin = new Plugin({
         key: 'example',
-        handler: function(config, req, res, next) {
+        handler: function(config, options, req, res, next) {
         }
       });
 
