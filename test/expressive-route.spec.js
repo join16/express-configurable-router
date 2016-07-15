@@ -35,7 +35,10 @@ describe('expressiveRoute', function() {
         });
       });
 
-      expect(routes.getRouteTables()).to.have.length(1);
+      var tables = routes.getRouteTables();
+
+      expect(tables).to.have.length(1);
+      expect(tables[0]).to.be.a('object').and.include.keys(['url', 'method']);
     });
   });
 
