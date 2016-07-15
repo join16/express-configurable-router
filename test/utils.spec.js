@@ -2,6 +2,7 @@
 
 var expect = require('chai').expect;
 
+var util = require('util');
 var utils = require('../lib/utils');
 
 describe('utils', function() {
@@ -21,9 +22,16 @@ describe('utils', function() {
 
   describe('.class', function() {
     describe('#isInstanceOf', function() {
+
+      function CustomError() {
+        Error.call(this);
+      }
+      util.inherits(CustomError, Error);
+
       it('returns whether given element is instance of Class', function() {
-        expect(utils.class.isInstanceOf(Error, new Error())).to.equal(true);
-        expect(utils.class.isInstanceOf(Error, {})).to.equal(false);
+        expect(utils.class.isInstanceOf(new Error(), Error)).to.equal(true);
+        expect(utils.class.isInstanceOf({}, Error)).to.equal(false);
+        expect(utils.class.isInstanceOf(new CustomError(), Error)).to.equal(true);
       });
     });
   });
