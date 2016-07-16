@@ -1,6 +1,6 @@
 {
   "name": "expressive-route",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "express configurable route manager with extendable plugin systems",
   "main": "index.js",
   "scripts": {
