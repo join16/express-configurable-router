@@ -105,6 +105,7 @@ describe('plugins/validate/dataValidator', function() {
         var result = dataValidator.validateValue(config, options, 'user', {
           name: 'John'
         });
+        console.log(result);
         expect(result).to.not.have.property('age');
       }).to.not.throw(Error);
       expect(function() {
