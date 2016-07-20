@@ -54,23 +54,26 @@ describe('plugins/validate', function() {
     it('generates routeTableResult', function() {
       expect(plugin.routeTableResult(config)).to.deep.equal({
         body: {
-          user: {
-            type: 'Object',
-            schema: {
-              name: {
-                type: 'String'
-              },
-              age: {
-                type: 'Integer',
-                optional: true,
-                spec: [
-                  '-10 <= value <= 30',
-                  'positive number',
-                  'even'
-                ]
+          schema: {
+            user: {
+              type: 'Object',
+              schema: {
+                name: {
+                  type: 'String'
+                },
+                age: {
+                  type: 'Integer',
+                  optional: true,
+                  spec: [
+                    '-10 <= value <= 30',
+                    'positive number',
+                    'even'
+                  ]
+                }
               }
             }
-          }
+          },
+          type: 'Object'
         }
       });
     });

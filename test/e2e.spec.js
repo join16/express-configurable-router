@@ -39,14 +39,18 @@ describe('End to End', function() {
       method: 'post',
       config: {
         handler: {},
+        comments: [],
         validate: {
           body: {
-            name: {
-              type: 'String'
-            },
-            age: {
-              type: 'Integer',
-              optional: true
+            type: 'Object',
+            schema: {
+              name: {
+                type: 'String'
+              },
+              age: {
+                type: 'Integer',
+                optional: true
+              }
             }
           }
         }
